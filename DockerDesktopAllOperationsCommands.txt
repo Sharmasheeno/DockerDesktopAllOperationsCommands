@@ -1,0 +1,160 @@
+sudo lsof -i :5432
+
+COMMAND   PID   USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+postgres  1234  user   ...  TCP   ...    LISTEN
+
+
+sudo systemctl stop postgresql
+
+
+docker compose up -d
+
+Docker Compose
+docker compose down
+docker compose up -d
+
+Containers
+docker ps               # Running containers
+docker ps -a            # All containers
+docker stop <id>        # Stop container
+docker start <id>       # Start stopped container
+docker rm <id>          # Remove container
+
+
+Images
+docker images           # List images
+docker pull <image>     # Download image
+docker rmi <image>      # Remove image
+
+
+ Optional Cleanup
+
+If your container is stuck from a previous attempt:
+docker container ls -a           # find the stuck container
+
+Volumes & Networks
+docker volume ls        # List volumes
+docker network ls       # List networks
+
+
+Cleanup
+docker system prune     # Clean unused stuff (prompted)
+docker system df        # Show disk usage
+
+docker container rm -f <id>      # force remove it
+
+
+docker stop postgres_containerCA21
+
+docker stop <container_name_or_id>
+
+ Stop All Running Containers
+docker stop $(docker ps -q)
+
+
+docker ps
+docker ps -a
+
+If you want to force it to recreate containers:
+docker compose up -d --force-recreate
+
+1. Delete a Specific Container
+docker stop pgadmin4_containerCA21
+docker rm pgadmin4_containerCA21
+
+Delete All Containers
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+
+
+Restart System Docker
+sudo systemctl restart docker
+
+
+Then check its status:
+sudo systemctl status docker
+
+
+reboot
+
+
+docker ps
+
+
+docker stop postgres_containerCA21
+
+
+
+
+docker start postgres_containerCA21
+
+
+
+Stops and removes everything that was created by docker compose up, specificall
+docker compose down
+
+sudo apt update
+sudo apt install git -y
+
+
+git config --global user.name "sharmasheeno"
+git config --global user.email "sharmacadenuur2017@gmail.com"
+
+
+git config --list
+
+The first time, it will ask for your GitHub username and personal access token (GitHub no longer supports password login). After that, Git will save those in ~/.git-credentials.
+git config --global credential.helper store
+
+
+
+git config --global credential.helper
+
+✅ Step 1: Install Git (if not done yet)
+
+sudo apt update
+sudo apt install git
+
+✅ Step 2: Configure Git (if first time)
+
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+
+ ✅Step 3: Create a Repository on GitHub
+
+    Go to https://github.com
+
+    Click "New" repository
+
+    Give it a name (e.g., my-docs)
+
+    Keep it public or private, as you prefer
+
+    Do not check “Initialize with README”
+
+    Click Create repository
+    
+ ✅Step 4: Create a Project Folder Locally
+mkdir my-docs
+cd my-docs
+
+Then place your files inside, e.g.:
+echo "This is my document" > doc.txt
+
+
+
+
+✅Step 5: Initialize Git and Add Remote
+git init
+git add .
+git commit -m "Initial commit"
+
+
+Now, connect to the GitHub repo you created. Replace your-username and your-repo:
+git remote add origin https://github.com/your-username/my-docs.git
+
+
+✅Step 6: Push to GitHub
+git push -u origin master
+
+git clone
